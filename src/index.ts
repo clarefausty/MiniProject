@@ -9,8 +9,13 @@ function handleSubmit(e : SubmitEvent){
     e.preventDefault()
     const newToDo = input.value
     const newLI = document.createElement("li")
+    const checkbox = document.createElement("input")
+    checkbox.type = "checkbox" 
     newLI.append(newToDo)
+    newLI.append(checkbox)
     list?.append(newLI)
+
+    input.value = ""
     
 }
 
