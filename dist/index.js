@@ -7,18 +7,20 @@ const list = document.getElementById("todolist");
 function handleSubmit(e) {
     e.preventDefault();
     const AddTodo = {
-        name: input.value,
+        inputtext: input.value,
         completed: false,
     };
+    createTodo(AddTodo);
     todo.push(AddTodo);
-    const newToDo = input.value;
+    input.value = "";
+}
+function createTodo(todo) {
     const newLI = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    newLI.append(newToDo);
+    newLI.append(todo.inputtext);
     newLI.append(checkbox);
     list === null || list === void 0 ? void 0 : list.append(newLI);
-    input.value = "";
 }
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", handleSubmit);
 // btn?.addEventListener("click", function(){

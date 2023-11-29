@@ -1,5 +1,5 @@
 interface Todo {
-    name:string,
+    inputtext:string,
     completed: boolean
 }
 
@@ -13,22 +13,25 @@ const list = document.getElementById("todolist")
 function handleSubmit(e : SubmitEvent){
     e.preventDefault()
     const AddTodo: Todo = {
-        name:input.value,
+        inputtext:input.value,
         completed:false,
     }
+    createTodo(AddTodo)
     todo.push(AddTodo)
-    const newToDo = input.value
-    const newLI = document.createElement("li")
-    const checkbox = document.createElement("input")
-    checkbox.type = "checkbox" 
-    newLI.append(newToDo)
-    newLI.append(checkbox)
-    list?.append(newLI)
-
+    
     input.value = ""
     
 }
 
+function createTodo(todo:Todo){
+    const newLI = document.createElement("li")
+    const checkbox = document.createElement("input")
+    checkbox.type = "checkbox" 
+    newLI.append(todo.inputtext)
+    newLI.append(checkbox)
+    list?.append(newLI)
+
+}
 
 form?.addEventListener("submit", handleSubmit)
 
