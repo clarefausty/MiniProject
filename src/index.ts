@@ -18,7 +18,9 @@ function handleSubmit(e : SubmitEvent){
     }
     createTodo(AddTodo)
     todo.push(AddTodo)
-    
+
+    localStorage.setItem("todo", JSON.stringify(todo))
+
     input.value = ""
     
 }

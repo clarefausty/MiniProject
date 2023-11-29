@@ -12,6 +12,7 @@ function handleSubmit(e) {
     };
     createTodo(AddTodo);
     todo.push(AddTodo);
+    localStorage.setItem("todo", JSON.stringify(todo));
     input.value = "";
 }
 function createTodo(todo) {
