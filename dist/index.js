@@ -1,10 +1,16 @@
 "use strict";
+const todo = [];
 const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
 const list = document.getElementById("todolist");
 function handleSubmit(e) {
     e.preventDefault();
+    const AddTodo = {
+        name: input.value,
+        completed: false,
+    };
+    todo.push(AddTodo);
     const newToDo = input.value;
     const newLI = document.createElement("li");
     const checkbox = document.createElement("input");
