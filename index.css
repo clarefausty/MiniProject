@@ -63,8 +63,9 @@ input, form, button, .first-layout ul{
 form, .first-layout ul{
     background-color: black;
 }
-.first-layout ul input[type="checkbox"].checked {
-    background-color: #00df9a;
+ input[type="checkbox"]:checked {
+    accent-color: #00df9a !important;
+    color:#ffffff;
 }
   input[type='checkbox']:after {
       box-shadow: none !important;

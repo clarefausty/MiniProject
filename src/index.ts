@@ -46,7 +46,6 @@ function createTodo(todo: Todo) {
     checkbox.addEventListener("change", function(){
         todo.completed = checkbox.checked;
         saveChecked()
-        updateCheckboxStyle(checkbox)
     })
 
     clearButton.textContent = "Clear";
@@ -58,16 +57,9 @@ function createTodo(todo: Todo) {
     newLI.append(checkbox);
     newLI.append(clearButton);
     list?.append(newLI);
-    updateCheckboxStyle(checkbox)
 }
 
-function updateCheckboxStyle(checkbox: HTMLInputElement) {
-    if (checkbox.checked) {
-        checkbox.classList.add("checked");
-    } else {
-        checkbox.classList.remove("checked");
-    }
-}
+
 
 function removeTodoItem(todoItem: HTMLLIElement) {
     const index = Array.from(list?.children || []).indexOf(todoItem);
