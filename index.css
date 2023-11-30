@@ -28,7 +28,7 @@
 .first-layout ul>li{
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 form{
@@ -39,7 +39,7 @@ form{
     border: 1px solid #eee;
     padding: 2em;
 }
-h1{
+h1, button{
     color: #00df9a;
 }
 button{
