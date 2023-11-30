@@ -37,7 +37,7 @@ form{
     position: relative;
     bottom: -3rem;
     border: 1px solid #eee;
-    padding: 2em;
+    padding: 2em 1em;
 }
 h1, button{
     color: #00df9a;
