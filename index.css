@@ -16,10 +16,16 @@
 
 .first-layout{
     display: grid;
-    gap:2rem;
-    border: 1px solid #eee;
-    padding: 3em;
+    gap: 2rem;
 
+}
+.first-layout ul{
+    border: 1px solid #eee;
+    padding: 2em 3em;
+}
+.first-layout ul>li{
+    display: flex;
+    gap: 1rem;
 }
 
 form{
