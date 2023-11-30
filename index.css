@@ -29,13 +29,14 @@
     display: flex;
     justify-content: space-between;
     gap: 1.5rem;
+    align-items: center;
 }
 
 form{
     display: grid;
     gap: 1.5rem;
     position: relative;
-    bottom: -3rem;
+    bottom: -2rem;
     border: 1px solid #eee;
     padding: 2em 1em;
 }
