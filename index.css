@@ -20,15 +20,18 @@
 
 }
 .first-layout ul{
+    display: grid;
+    gap: 1rem;
     border: 1px solid #eee;
-    padding: 2em 3em;
+    padding: 1.5em 1em;
 }
 .first-layout ul>li{
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 form{
     position: relative;
-    bottom: -15rem;
+    bottom: -10rem;
 }
