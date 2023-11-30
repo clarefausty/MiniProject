@@ -35,15 +35,21 @@ form{
     display: grid;
     gap: 1.5rem;
     position: relative;
-    bottom: -6rem;
+    bottom: -3rem;
     border: 1px solid #eee;
     padding: 2em;
+}
+h1{
+    color: #00df9a;
 }
 button{
     padding: .5em 1em;
     border: none;
-    border-radius: .5rem;
+    
 }
 input{
-    
+    padding:1em 2em;
+}
+input, form, button, .first-layout ul{
+    border-radius: .5rem;
 }
