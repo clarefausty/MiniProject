@@ -10,10 +10,15 @@
     flex-direction: column;
     justify-content: space-between;
     place-items: center;
+    padding-top: 2em;
     
 }
 
 .first-layout{
+    display: grid;
+    gap:2rem;
+    border: 1px solid #eee;
+    padding: 3em;
 
 }
 
