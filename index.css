@@ -39,3 +39,6 @@ form{
     border: 1px solid #eee;
     padding: 2em;
 }
+button{
+    padding: .5em 1em;
+}
