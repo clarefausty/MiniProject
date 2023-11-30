@@ -10,6 +10,9 @@ function readTodo() {
         return [];
     return JSON.parse(todoJSON);
 }
+function saveChecked() {
+    localStorage.setItem("todo", JSON.stringify(todo));
+}
 function handleSubmit(e) {
     e.preventDefault();
     const addTodo = {
@@ -18,7 +21,7 @@ function handleSubmit(e) {
     };
     createTodo(addTodo);
     todo.push(addTodo);
-    localStorage.setItem("todo", JSON.stringify(todo));
+    saveChecked();
     input.value = "";
 }
 function createTodo(todo) {
@@ -26,6 +29,11 @@ function createTodo(todo) {
     const checkbox = document.createElement("input");
     const clearButton = document.createElement("button");
     checkbox.type = "checkbox";
+    checkbox.checked = todo.completed;
+    checkbox.addEventListener("change", function () {
+        todo.completed = checkbox.checked;
+        saveChecked();
+    });
     clearButton.textContent = "Clear";
     clearButton.addEventListener("click", () => {
         removeTodoItem(newLI);
