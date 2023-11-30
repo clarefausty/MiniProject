@@ -50,6 +50,7 @@ button{
 }
 input{
     padding:1em 2em;
+    border: 1px solid #00df9a;
 }
 input, form, button, .first-layout ul{
     border-radius: .5rem;
