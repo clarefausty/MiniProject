@@ -1,54 +1,59 @@
 interface Todo {
-    inputtext:string,
-    completed: boolean
+    inputtext: string;
+    completed: boolean;
 }
 
-const btn = document.getElementById("btn") as HTMLButtonElement
-const input = document.getElementById("todoinput") as HTMLInputElement
-const form = document.querySelector("form")
-const list = document.getElementById("todolist")
+const input = document.getElementById("todoinput") as HTMLInputElement;
+const form = document.querySelector("form");
+const list = document.getElementById("todolist");
 
-const todo: Todo[] = readTodo()
-todo.forEach(createTodo)
+const todo: Todo[] = readTodo();
+todo.forEach(createTodo);
 
-
-
-function readTodo(): Todo[]{
-    const todoJSON = localStorage.getItem("todo")
-    if(todoJSON === null) return []
-    return JSON.parse(todoJSON)
+function readTodo(): Todo[] {
+    const todoJSON = localStorage.getItem("todo");
+    if (todoJSON === null) return [];
+    return JSON.parse(todoJSON);
 }
 
+function handleSubmit(e: SubmitEvent) {
+    e.preventDefault();
+    const addTodo: Todo = {
+        inputtext: input.value,
+        completed: false,
+    };
+    createTodo(addTodo);
+    todo.push(addTodo);
 
-function handleSubmit(e : SubmitEvent){
-    e.preventDefault()
-    const AddTodo: Todo = {
-        inputtext:input.value,
-        completed:false,
+    localStorage.setItem("todo", JSON.stringify(todo));
+
+    input.value = "";
+}
+
+function createTodo(todo: Todo) {
+    const newLI = document.createElement("li");
+    const checkbox = document.createElement("input");
+    const clearButton = document.createElement("button");
+
+    checkbox.type = "checkbox";
+    clearButton.textContent = "Clear";
+    clearButton.addEventListener("click", () => {
+        removeTodoItem(newLI);
+    });
+
+    newLI.append(todo.inputtext);
+    newLI.append(checkbox);
+    newLI.append(clearButton);
+    list?.append(newLI);
+}
+
+function removeTodoItem(todoItem: HTMLLIElement) {
+    const index = Array.from(list?.children || []).indexOf(todoItem);
+    if (index !== -1) {
+        list?.removeChild(todoItem);
+        todo.splice(index, 1);
+        localStorage.setItem("todo", JSON.stringify(todo));
     }
-    createTodo(AddTodo)
-    todo.push(AddTodo)
-
-    localStorage.setItem("todo", JSON.stringify(todo))
-
-    input.value = ""
-    
 }
 
-function createTodo(todo:Todo){
-    const newLI = document.createElement("li")
-    const checkbox = document.createElement("input")
-    checkbox.type = "checkbox" 
-    newLI.append(todo.inputtext)
-    newLI.append(checkbox)
-    list?.append(newLI)
-
-}
-
-form?.addEventListener("submit", handleSubmit)
-
-
-// btn?.addEventListener("click", function(){
-//     alert(input.value)
-//     input.value
-// })
+form?.addEventListener("submit", handleSubmit);

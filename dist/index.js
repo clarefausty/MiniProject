@@ -1,5 +1,4 @@
 "use strict";
-const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
 const list = document.getElementById("todolist");
@@ -13,25 +12,35 @@ function readTodo() {
 }
 function handleSubmit(e) {
     e.preventDefault();
-    const AddTodo = {
+    const addTodo = {
         inputtext: input.value,
         completed: false,
     };
-    createTodo(AddTodo);
-    todo.push(AddTodo);
+    createTodo(addTodo);
+    todo.push(addTodo);
     localStorage.setItem("todo", JSON.stringify(todo));
     input.value = "";
 }
 function createTodo(todo) {
     const newLI = document.createElement("li");
     const checkbox = document.createElement("input");
+    const clearButton = document.createElement("button");
     checkbox.type = "checkbox";
+    clearButton.textContent = "Clear";
+    clearButton.addEventListener("click", () => {
+        removeTodoItem(newLI);
+    });
     newLI.append(todo.inputtext);
     newLI.append(checkbox);
+    newLI.append(clearButton);
     list === null || list === void 0 ? void 0 : list.append(newLI);
 }
+function removeTodoItem(todoItem) {
+    const index = Array.from((list === null || list === void 0 ? void 0 : list.children) || []).indexOf(todoItem);
+    if (index !== -1) {
+        list === null || list === void 0 ? void 0 : list.removeChild(todoItem);
+        todo.splice(index, 1);
+        localStorage.setItem("todo", JSON.stringify(todo));
+    }
+}
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", handleSubmit);
-// btn?.addEventListener("click", function(){
-//     alert(input.value)
-//     input.value
-// })
