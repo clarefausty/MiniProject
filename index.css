@@ -10,14 +10,14 @@
     flex-direction: column;
     justify-content: space-between;
     place-items: center;
-    padding-top: 2em;
-    
 }
-
+.head{
+    padding: 2em;
+    border-bottom: 1px solid #eee;
+}
 .first-layout{
     display: grid;
     gap: 2rem;
-
 }
 .first-layout ul{
     display: grid;
