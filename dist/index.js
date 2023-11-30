@@ -1,5 +1,6 @@
 "use strict";
-const todo = [];
+const todo = readTodo();
+todo.forEach(createTodo);
 const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
