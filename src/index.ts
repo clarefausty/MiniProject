@@ -10,6 +10,13 @@ const input = document.getElementById("todoinput") as HTMLInputElement
 const form = document.querySelector("form")
 const list = document.getElementById("todolist")
 
+function readTodo(){
+    const todoJSON = localStorage.getItem("todo")
+    if(todoJSON === null) return []
+    return JSON.parse(todoJSON)
+}
+
+
 function handleSubmit(e : SubmitEvent){
     e.preventDefault()
     const AddTodo: Todo = {

@@ -4,6 +4,12 @@ const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
 const list = document.getElementById("todolist");
+function readTodo() {
+    const todoJSON = localStorage.getItem("todo");
+    if (todoJSON === null)
+        return [];
+    return JSON.parse(todoJSON);
+}
 function handleSubmit(e) {
     e.preventDefault();
     const AddTodo = {
