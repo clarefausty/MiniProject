@@ -36,5 +36,6 @@ form{
     gap: 1rem;
     position: relative;
     bottom: -5rem;
-    padding: 1px solid #eee;
+    border: 1px solid #eee;
+    padding: 2em;
 }
