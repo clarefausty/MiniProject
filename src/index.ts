@@ -36,14 +36,17 @@ function handleSubmit(e: SubmitEvent) {
 
 function createTodo(todo: Todo) {
     const newLI = document.createElement("li");
+
     const checkbox = document.createElement("input");
     const clearButton = document.createElement("button");
 
     checkbox.type = "checkbox";
+    checkbox.style.backgroundColor = "green"
     checkbox.checked= todo.completed
     checkbox.addEventListener("change", function(){
         todo.completed = checkbox.checked;
         saveChecked()
+        updateCheckboxStyle(checkbox)
     })
 
     clearButton.textContent = "Clear";
@@ -55,6 +58,15 @@ function createTodo(todo: Todo) {
     newLI.append(checkbox);
     newLI.append(clearButton);
     list?.append(newLI);
+    updateCheckboxStyle(checkbox)
+}
+
+function updateCheckboxStyle(checkbox: HTMLInputElement) {
+    if (checkbox.checked) {
+        checkbox.classList.add("checked");
+    } else {
+        checkbox.classList.remove("checked");
+    }
 }
 
 function removeTodoItem(todoItem: HTMLLIElement) {
