@@ -10,14 +10,20 @@
     flex-direction: column;
     justify-content: space-between;
     place-items: center;
+    width: 100%;
 }
 .head{
     padding: 2em;
     border-bottom: 1px solid #eee;
+    width: 100%;
+}
+.head>h1{
+    width: 100%;
 }
 .first-layout{
     display: grid;
     gap: 2rem;
+    width: 90%;
 }
 .first-layout ul{
     display: grid;
@@ -40,6 +46,7 @@ form{
     bottom: -2rem;
     border: 1px solid #eee;
     padding: 2em 1em;
+    width: 90%;
 }
 h1, button{
     color: #00df9a;
