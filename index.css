@@ -30,6 +30,7 @@
     justify-content: space-between;
     gap: 1.5rem;
     align-items: center;
+    color: #ffffff;
 }
 
 form{
@@ -46,6 +47,7 @@ h1, button{
 button{
     padding: .5em 1em;
     border: none;
+    background-color: #ffffff;
     
 }
 input{
@@ -55,3 +57,14 @@ input{
 input, form, button, .first-layout ul{
     border-radius: .5rem;
 }
+
+form, .first-layout ul{
+    background-color: black;
+}
+input[type=checkbox]:checked {
+    background-color: #00df9a !important;
+    color: #ffffff !important;
+  }
+  input[type='checkbox']:after {
+      box-shadow: none !important;
+  }
