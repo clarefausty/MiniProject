@@ -1,10 +1,10 @@
 "use strict";
-const todo = readTodo();
-todo.forEach(createTodo);
 const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
 const list = document.getElementById("todolist");
+const todo = readTodo();
+todo.forEach(createTodo);
 function readTodo() {
     const todoJSON = localStorage.getItem("todo");
     if (todoJSON === null)
