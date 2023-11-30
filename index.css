@@ -32,6 +32,9 @@
 }
 
 form{
+    display: grid;
+    gap: 1rem;
     position: relative;
-    bottom: -10rem;
+    bottom: -5rem;
+    padding: 1px solid #eee;
 }
