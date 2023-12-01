@@ -60,7 +60,6 @@ function createTodo(todo: Todo) {
 }
 
 
-
 function removeTodoItem(todoItem: HTMLLIElement) {
     const index = Array.from(list?.children || []).indexOf(todoItem);
     if (index !== -1) {
